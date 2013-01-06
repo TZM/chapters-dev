@@ -11,6 +11,8 @@ jQuery(function($) {
     language = (language_complete[0]);
     console.log("I speak (root): %s", language);
 
+	console.log("YO YO YO");
+
     i18n.init({ lng: language, debug: true }, function() {
         // save to use translation function as resources are fetched
         $(".tzm-i18n").i18n();
@@ -45,7 +47,7 @@ jQuery(function($) {
             slide = false;
         }
     });
-    
+
 });
 function createDropDown(){
     var source = $("#source");
@@ -53,14 +55,14 @@ function createDropDown(){
     var options = $("option", source);
 
     $("body").append('<dl id="target" class="dropdown"></dl>')
-    $("#target").append('<dt><a href="#">' + selected.text() + 
-    '<span class="value">' + selected.val() + 
+    $("#target").append('<dt><a href="#">' + selected.text() +
+    '<span class="value">' + selected.val() +
     '</span></a></dt>')
     $("#target").append('<dd><ul></ul></dd>')
 
     options.each(function(){
-        $("#target dd ul").append('<li><a href="#">' + 
-        $(this).text() + '<span class="value">' + 
+        $("#target dd ul").append('<li><a href="#">' +
+        $(this).text() + '<span class="value">' +
         $(this).val() + '</span></a></li>');
     });
 }
