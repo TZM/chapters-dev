@@ -35,10 +35,13 @@ function ZmgcGuide() {
   }
 
   // Load pages
-  $('.intro').live('click', function() {
-    console.log('click on intro button');
-    $('.content:first').empty().load('../guide/intro.html');
+  $("#primary-nav .nav-link").live('click', function() {
+		var $this = $(this);
+		var strContentUrl = $this.attr("data-content");
+    $(".content:first").empty().load("../guide/" + strContentUrl);
+		return false;
   });
+
   // Initialise
   this.init();
 };
